@@ -1,0 +1,28 @@
+{
+  "name": "anubeautystudio",
+  "version": "1.0.0",
+  "description": "beauty studio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "abeautystudio": "npm start --prefix abeautystudio",
+    "dev": "concurrently \"npm run server\" \"npm run abeautystudio\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugmani/AnuBeautyStudio.git"
+  },
+  "author": "Yoog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yugmani/AnuBeautyStudio/issues"
+  },
+  "homepage": "https://github.com/yugmani/AnuBeautyStudio",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5"
+  }
+}
