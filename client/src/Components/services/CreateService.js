@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 
 class CreateService extends Component {
         constructor(props){
-        super(props)
+        super(props);
 
         this.onChangeService = this.onChangeService.bind(this);
         this.onChangePrice = this.onChangePrice.bind(this);
@@ -14,8 +14,7 @@ class CreateService extends Component {
         this.state = {
             service: "",
             price: ""
-        
-        }
+                }
         }
 
         
@@ -34,15 +33,26 @@ class CreateService extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+    
+            console.log(`Form submitted`);
+            console.log(`Service: ${this.state.service}`);
+            console.log(`Price: ${this.state.price}`);
 
-        const services = {
-            service: this.state.service,
-            price: this.state.price
-        }
+            this.setState({
+                service: "",
+                price: ""
+            })
 
-        console.log(services);
+            const newServices = {
+                service: this.state.service,
+                price: this.state.price
+            }
 
-        fetch("http://localhost:5000/services/add", {
+
+            
+        console.log(newServices);
+
+        /* fetch("http://localhost:5000/services/add", {
             method: "get",
             headers: {
               'Content-Type': 'application/json',
@@ -54,29 +64,30 @@ class CreateService extends Component {
             })
           window.location = "/";
         }
+        */
 
-        /*
-        axios.post("http://localhost:5000/services/add", services)
+        
+        axios.post("http://localhost:5000/services/add", newServices)
             .then(res=> console.log(res.data));
          
-        this.setState({
-            service: "",
-            price:""
-        })
-          
-    }*/ 
+     }
 
 render() {
     return (
-        <div className="wrapper">
+        <div className="wrapper" style={{marginTop: 20}}>
+
             <h2 className="welcomepage">Create New Service</h2>
             <div className="nav">
-                <Link to="/" className="">HOME</Link>
-                <Link to="/list" className="">Customer List</Link>
-                <Link to="/addService" className="">Service Details</Link>
+            <Link to="/" className="">HOME</Link>
+                    <Link to="/list" className="">Customer List</Link>
+                    <Link to="/checkin" className="">Add Customer</Link>
+                    {/* <Link to="/addService" className="">Create Service</Link> */}
+                    <Link to="/serviceList" className="">Service List</Link>
+                
             </div>
 
             <form onSubmit={this.onSubmit}>
+
                 <div className="form-group">
                     Service:<br />
                     <input type="text"
@@ -84,15 +95,15 @@ render() {
                     className="form-control"
                     value={this.state.service}
                     onChange={this.onChangeService} />
-
                 </div>
+
                 <div className="form-group">
                     Price:<br />
                     <input type="Number"
                     required
                     className="form-control"
-                    value={this.state.service}
-                    onChange={this.onChangeService} />
+                    value={this.state.price}
+                    onChange={this.onChangePrice} />
 
                 </div>
                 <div className="form-group">

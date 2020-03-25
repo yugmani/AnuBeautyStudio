@@ -141,7 +141,7 @@
           padding:5px 15px 5px 25px;
           background-color:lightgray;
           color:navy;
-          border:1px solid rgb(197, 194, 194);
+          border:1px solid gray;
         }
   
   
@@ -189,9 +189,54 @@
       }
   
       .socialmedias a {
-     
         font-size:35px;
         text-decoration:none;
       }
   
-  
+      .deco {
+        text-decoration: none;
+      }
+
+
+      .listed {
+        /* width:70%;
+        margin:0 auto; */
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        /* text-align:right; */
+        margin:20px 10px 20px 10px;
+        background-color:white;
+        padding:10px;
+        
+      }
+
+      .left, .lefti {
+        align-self: flex-start;
+        flex-basis: 200px;
+        text-align:left;
+        font-size: 20px;
+        color:gray;
+        /* background-color: pink; */
+      }
+
+      .left{
+        color:gray;
+      }
+
+      .lefti {
+        color:navy;
+      }
+
+      .pink-ground {
+        background-color: pink;
+      }
+
+      .gray-ground {
+        background-color: gray;
+      }
+
+      .centered{
+        width:70%;
+        margin:0 auto;
+      }

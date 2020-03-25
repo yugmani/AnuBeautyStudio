@@ -21,7 +21,7 @@ function Header() {
             </div>
             
       
-                <Link to="/create" className="checkin">Check In </Link>
+                <Link to="/checkin" className="checkin">Check In </Link>
                 
             <div className="welcomepage">
                 <h1 style={{color:"navy"}}>ANU'S BEAUTY STUDIO</h1>

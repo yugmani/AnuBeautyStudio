@@ -11,6 +11,7 @@ router.route("/").get((req, res) => {
 
 
 router.route('/add').post((req, res)=>{
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
   const name = req.body.name;
   const email = req.body.email;
   const phone = req.body.phone;

@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 5000;
 
 // app.use(routes);        //new
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+  next();
+});
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -51,12 +56,10 @@ app.use("/services", serviceRouter);
 // Send every request to the React app
 // Define any API routes before this runs
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
+
 
 app.get('*', (req, res) => {
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
     const rootHtmlPath = path.resolve(__dirname, '.', 'client/public', 'index.html');
   res.sendFile(rootHtmlPath);
   console.log(rootHtmlPath);

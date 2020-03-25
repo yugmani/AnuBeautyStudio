@@ -13,11 +13,11 @@ import Testimonials from "./Components/Testimonials";
 import Contact from './Components/Contact';
 import Footer from "./Components/Footer";
 
-import CustomerList from "./Components/CustomerList";
-import EditCustomer from "./Components/EditCustomer";
-import CreateCustomer from "./Components/CreateCustomer";
-import CreateService from "./Components/CreateService";
-// import serviceList from './Components/serviceList';
+import CustomerList from "./Components/customers/CustomerList";
+import EditCustomer from "./Components/customers/EditCustomer";
+import CreateCustomer from "./Components/customers/CreateCustomer";
+import CreateService from "./Components/services/CreateService";
+import ServiceList from './Components/services/ServiceList';
 
 
 
@@ -25,12 +25,12 @@ function App() {
   return (
     <div >
       <Router>
-                <Switch>
+            <Switch>
                 <Route path="/list" exact component = {CustomerList} />
-                <Route path="/edit:id" exact component = {EditCustomer} />
-                <Route path="/create" exact component = {CreateCustomer} />
+                <Route path="/edit/:id" exact component = {EditCustomer} />
+                <Route path="/checkin" exact component = {CreateCustomer} />
                 <Route path="/addService" exact component = {CreateService} />
-                {/* <Route path = "/addService" exact component = {serviceList} /> */}
+                <Route path = "/serviceList" exact component = {ServiceList} />
 
                 <Route path="/" exact component = {Header} />
                 <Route path="/Amenities" exact component = {Amenities} />
@@ -38,7 +38,7 @@ function App() {
                 <Route path="/Contact" exact component = {Contact} />
               
                 <Route path="/Footer" exact component = {Footer} />
-                </Switch>
+            </Switch>
                 
         </Router>
         
