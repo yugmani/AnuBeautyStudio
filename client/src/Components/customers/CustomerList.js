@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
 
-/*
+//dynamic part start
+/* import axios from 'axios';
+
+
 const Customer = props=> (
     
         <tr>
@@ -82,7 +84,7 @@ class CustomerList extends Component {
             </div>
         )
     }
-}
+} //dynamic part end
 */
 
 
